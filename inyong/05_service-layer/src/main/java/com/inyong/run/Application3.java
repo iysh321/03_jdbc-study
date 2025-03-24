@@ -1,12 +1,12 @@
-package com.kangbroo.run;
+package com.inyong.run;
 
-import com.kangbroo.model.dao.MenuDAO;
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
+import com.inyong.model.dao.MenuDAO;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
 
 import java.sql.Connection;
 
-import static com.kangbroo.common.JDBCTemplate.*;
+import static com.inyong.common.JDBCTemplate.*;
 
 public class Application3 {
     public static void main(String[] args) {

@@ -1,14 +1,14 @@
-package com.kangbroo.model.dto;
+package com.inyong.model.dto;
 
 public class CategoryDTO {
 
     private int categoryCode;
     private String categoryName;
-    private int refCategoryCode;
+    private Integer refCategoryCode;
 
     public CategoryDTO(){}
 
-    public CategoryDTO(int categoryCode, String categoryName, int refCategoryCode) {
+    public CategoryDTO(int categoryCode, String categoryName, Integer refCategoryCode) {
         this.categoryCode = categoryCode;
         this.categoryName = categoryName;
         this.refCategoryCode = refCategoryCode;
@@ -30,11 +30,11 @@ public class CategoryDTO {
         this.categoryName = categoryName;
     }
 
-    public int getRefCategoryCode() {
+    public Integer getRefCategoryCode() {
         return refCategoryCode;
     }
 
-    public void setRefCategoryCode(int refCategoryCode) {
+    public void setRefCategoryCode(Integer refCategoryCode) {
         this.refCategoryCode = refCategoryCode;
     }
 

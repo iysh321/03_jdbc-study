@@ -1,7 +1,7 @@
-package com.kangbroo.run;
+package com.inyong.run;
 
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
-import static com.kangbroo.common.JDBCTemplate.close;
-import static com.kangbroo.common.JDBCTemplate.getConnection;
+import static com.inyong.common.JDBCTemplate.close;
+import static com.inyong.common.JDBCTemplate.getConnection;
 
 public class Application1 {
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class Application1 {
 
         Properties prop = new Properties();
         try {
-            prop.loadFromXML(new FileInputStream("src/main/java/com/kangbroo/mapper/menu-query.xml"));
+            prop.loadFromXML(new FileInputStream("src/main/java/com/inyong/mapper/menu-query.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

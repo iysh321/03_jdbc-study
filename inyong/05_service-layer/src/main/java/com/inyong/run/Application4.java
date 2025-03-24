@@ -1,8 +1,8 @@
-package com.kangbroo.run;
+package com.inyong.run;
 
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
-import com.kangbroo.model.service.MenuService;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
+import com.inyong.model.service.MenuService;
 
 public class Application4 {
 

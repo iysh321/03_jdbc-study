@@ -1,4 +1,4 @@
-package com.kangbroo.common;
+package com.inyong.common;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,7 +26,6 @@ public class JDBCTemplate {
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, user, password);
-            conn.setAutoCommit(false); // autoCommit 비활성화
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
@@ -56,26 +55,6 @@ public class JDBCTemplate {
         try{
             if(stmt != null && !stmt.isClosed())
                 stmt.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void commit(Connection conn){
-        try {
-            if(conn != null && !conn.isClosed()){
-                conn.commit();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void rollback(Connection conn){
-        try {
-            if(conn != null && !conn.isClosed()){
-                conn.rollback();
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

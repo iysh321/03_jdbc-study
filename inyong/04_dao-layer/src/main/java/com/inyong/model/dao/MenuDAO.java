@@ -1,4 +1,4 @@
-package com.kangbroo.model.dao;
+package com.inyong.model.dao;
 
 /*
     ## DAO ##
@@ -8,8 +8,8 @@ package com.kangbroo.model.dao;
     4. 실행할 sql문 별로 메소드로 따로 구성
  */
 
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static com.kangbroo.common.JDBCTemplate.close;
+import static com.inyong.common.JDBCTemplate.close;
 
 public class MenuDAO {
 

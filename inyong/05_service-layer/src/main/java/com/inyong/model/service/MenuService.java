@@ -1,4 +1,4 @@
-package com.kangbroo.model.service;
+package com.inyong.model.service;
 
 /*
     ## Service ##
@@ -14,13 +14,13 @@ package com.kangbroo.model.service;
     * 비즈니스 로직 : 데이터베이스와 사용자인터페이스(UI)간의 정보 교환을 위한 규칙이나 알고리즘 의미
  */
 
-import com.kangbroo.model.dao.MenuDAO;
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
+import com.inyong.model.dao.MenuDAO;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
 
 import java.sql.Connection;
 
-import static com.kangbroo.common.JDBCTemplate.*;
+import static com.inyong.common.JDBCTemplate.*;
 
 public class MenuService {
 

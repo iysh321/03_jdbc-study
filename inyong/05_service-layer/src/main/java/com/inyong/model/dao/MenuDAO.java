@@ -1,7 +1,7 @@
-package com.kangbroo.model.dao;
+package com.inyong.model.dao;
 
-import com.kangbroo.model.dto.CategoryDTO;
-import com.kangbroo.model.dto.MenuDTO;
+import com.inyong.model.dto.CategoryDTO;
+import com.inyong.model.dto.MenuDTO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import static com.kangbroo.common.JDBCTemplate.close;
+import static com.inyong.common.JDBCTemplate.close;
 
 public class MenuDAO {
 

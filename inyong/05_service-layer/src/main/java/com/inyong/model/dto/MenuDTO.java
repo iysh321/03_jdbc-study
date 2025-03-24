@@ -1,4 +1,4 @@
-package com.kangbroo.model.dto;
+package com.inyong.model.dto;
 
 public class MenuDTO {
 
