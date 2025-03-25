@@ -22,6 +22,17 @@ import java.sql.Connection;
 
 import static com.inyong.common.JDBCTemplate.*;
 
+/*
+    ## Service ##
+    1. 비즈니스 로직처리와 트랜잭션를 처리 담당
+       - 사용자의 요청에 따라 순차적으로 진행시킬 작업을 하나로 묶어 관리
+    2. 사용자인터페이스(UI)와 데이터베이스(Model) 사이의 계층
+    3. 처리 과정
+       1) Connection 생성
+       2) 작업을 순차적으로 진행
+       3) 트랜잭션 처리가 필요하다면 트랜잭션 처리
+       4) Connection 반납
+ */
 public class MenuService {
 
     // 신규 카테고리와 메뉴 동시 추가
@@ -46,5 +57,40 @@ public class MenuService {
 
         return result;
     }
+
+    public int registCategoryAndMenu2(CategoryDTO category, MenuDTO menu){
+        // 신규 카테고리 등록 후 등록시 생성된 카테고리번호로 메뉴 등록
+
+        int result = 0; // 해당 작업들 전체의 성공여부를 판별할 변수 (최종결과)
+        MenuDAO menuDao = new MenuDAO();
+
+        Connection conn = getConnection();
+
+        // 1) 신규 카테고리 등록
+        int result1 = menuDao.insertCategory(conn, category);
+        // 2) 1번과정으로 등록된 카테고리번호를 조회
+        int currCategoryCode = menuDao.selectCurrentCategoryCode(conn);
+        menu.setCategoryCode(currCategoryCode);
+        // 3) 신규 메뉴 등록
+        int result2 = menuDao.insertMenu(conn, menu);
+
+        if(result1 > 0 && result2 > 0){
+            commit(conn);
+            result = 1;
+        }else{
+            rollback(conn);
+        }
+
+        return result;
+
+    }
+
+
+
+
+
+
+
+
 
 }

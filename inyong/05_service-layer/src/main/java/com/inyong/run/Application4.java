@@ -18,7 +18,7 @@ public class Application4 {
         int menuPrice = 7000;
         int categoryCode = 4;
         String orderableStatus = "Y";
-        
+
 
         // 데이터 전송을 위해 DTO 객체 담기
         CategoryDTO category = new CategoryDTO();
@@ -40,8 +40,6 @@ public class Application4 {
         }else{
             System.out.println("등록 실패");
         }
-
-
 
     }
 

@@ -11,7 +11,7 @@ public class JDBCTemplate {
 
         Properties prop = new Properties();
         try {
-            prop.load(new FileReader("src/main/java/com/kangbroo/config/connection-config.properties"));
+            prop.load(new FileReader("src/main/java/com/inyong/config/connection-config.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

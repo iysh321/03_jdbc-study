@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -18,7 +19,7 @@ public class MenuDAO {
 
     public MenuDAO(){
         try {
-            prop.loadFromXML(new FileInputStream("src/main/java/com/kangbroo/mapper/menu-query.xml"));
+            prop.loadFromXML(new FileInputStream("src/main/java/com/inyong/mapper/menu-query.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,11 +74,37 @@ public class MenuDAO {
     }
 
 
+    public int selectCurrentCategoryCode(Connection conn) {
+        // select문 => 조회결과 한행한열(하나의 숫자값) => ResultSet => int
+        int currentCategoryCode = 0; // 최종결과를 담을 변수
+        PreparedStatement pstmt = null;
+        ResultSet rset = null;
+        String query = prop.getProperty("selectCurrentCategoryCode");
 
+        try {
+            pstmt = conn.prepareStatement(query);
+            rset = pstmt.executeQuery();
 
+            if(rset.next()){
+                currentCategoryCode = rset.getInt("curr_category_code");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally{
+            close(rset);
+            close(pstmt);
+        }
 
+        return currentCategoryCode;
 
-
-
-
+    }
 }
+
+
+
+
+
+
+
+
+
